@@ -1,0 +1,214 @@
+@import url('https://fonts.googleapis.com/css2?family=Herr+Von+Muellerhoff&family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap');
+
+#tooltip,#tooltip1,#tooltip2,#tooltip3{
+  display: none;
+}
+
+.validation-tooltip {
+  
+  display: none; /* Initially hidden */
+  position: absolute;
+  bottom: -48px;
+  left: 30px;
+  background-color: #a0b3b0;
+  color: #201f15;
+  padding: 10px 12px;
+  border-radius: 4px;
+  font-size: 14px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border: 1px solid #a0b3b0;
+  white-space: nowrap;
+}
+
+.validation-tooltip::after {
+  content: '';
+  position: absolute;
+  bottom: 39px;
+  left: 10px;
+  border-width: 10px;
+  border-style: solid;
+  border-color: #a0b3b0 transparent transparent transparent;
+  transform: rotate(180deg);
+}
+
+input:invalid + .validation-tooltip {
+  display: inline-block; /* Show the tooltip if input is invalid */
+ } 
+
+ .validation-tooltip::before { 
+
+   content: '⚠';    
+   top: 100%;
+  margin-right: 5px;
+  color: #e07b00;
+  font-weight: bold;
+}
+body{
+  background-color: #ccc;
+} 
+
+
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+html {
+	overflow-y: scroll; 
+}
+
+body {
+ 
+  background: #c1bdba;
+  font-family: 'Titillium Web', sans-serif;
+}
+
+a {
+  text-decoration:none;
+  color: #ffffff;
+  transition:.5s ease;
+  &:hover {
+    color: #a0b3a7;
+  }
+}
+
+.form {
+  background: #24333c;
+  padding: 40px;
+  max-width:600px;
+  margin:40px auto;
+  border-radius: 5px;
+  box-shadow:0 4px 10px 4px rgba(rgba(0, 0, 0, 0.176));
+}
+
+.tab-group {
+  list-style:none;
+  padding:0;
+  margin:0 0 40px 0;
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  li a {
+    display:block;
+    text-decoration:none;
+    padding:15px;
+    background: #435359;
+    color: #a0b3b0;
+    font-size:20px;
+    float:left;
+    width:50%;
+    text-align:center;
+    cursor:pointer;
+    transition:.5s ease;
+    &:hover {
+      background:  #1ab188;
+      color: white;
+    }
+  }
+  .active a {
+    background: #1ab188;
+    color: white;
+  }
+}
+
+.tab-content > div:last-child {
+  display:none;
+}
+
+
+h1 {
+  text-align:center;
+  color: white;
+  font-weight: 300;
+  margin:0 0 40px;
+font-size: 32px;
+font-display:initial;
+}
+
+input {
+  font-size:22px;
+  display:block;
+  width:100%;
+  height:100%;
+  padding:5px 10px;
+  background:none;
+  border:1px solid #a0b3b0;
+  color: #ffffff;
+  border-radius:0;
+  transition:border-color .25s ease, box-shadow .25s ease;
+  &:focus {
+		outline:0;
+		border-color:#1ab188;
+  }
+}
+
+.field-wrap {
+  position:relative;
+  margin-bottom:40px;
+}
+
+.top-row {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
+  > div {
+    float:left;
+    width:48%;
+    margin-right:4%;
+    &:last-child { 
+      margin:0;
+    }
+  }
+}
+
+.button {
+  border:0;
+  outline:none;
+  border-radius:0;
+  padding:15px 0;
+  font-size:2rem;
+  font-weight:700;
+  text-transform:uppercase;
+  letter-spacing:.1em;
+  background:#1ab188;
+  color: white;
+  transition:all.5s ease;
+  -webkit-appearance: none;
+  &:hover, &:focus {
+    background: #1b9f7c;
+  }
+}
+
+.button-block {
+  display:block;
+  width:100%;
+}
+
+.forgot {
+  margin-top:-20px;
+  text-align:right;
+}
+ .password{
+   
+  position: relative;
+   display: flex; 
+}
+.field-wrap .passwordToggler{
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: transparent;
+  border: none;
+}
+.passwordToggler .bi{
+  color: #1ab188;
+}
+.tooltips{
+  background-color: transparent;
+  color: #1ab188;
+}
